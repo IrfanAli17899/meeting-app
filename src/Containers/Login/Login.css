@@ -1,0 +1,159 @@
+.FormContainer{
+    background: rgba(0, 0, 0, 0.219);
+    height:100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: radial-gradient(circle,rgba(0, 0, 255, 0.322),rgba(255, 0, 0, 0.400));
+    background-position: center center;
+    background-size: cover;
+
+}
+.Form {
+    width: 510px;
+    border: 1px solid rgb(199, 199, 199);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: auto;
+    color: rgb(36, 36, 36) !important;
+    border-radius: 3px;
+    background: white;
+    text-align: center;
+}
+.labelParent{
+    width: 49.99%;
+    cursor:pointer;
+    text-align: center;
+    float: left;
+    display: inline-block;
+    padding: 25px 0;
+    margin-bottom:20px; 
+
+    
+}
+
+.Form form {
+    margin:0 auto;
+    width:100%;
+    font-size: 14px !important;
+    
+  }
+ .Form input {
+    margin: 10px auto;
+    padding:10px;
+    width: 90%;
+    display: block;
+    border:1px solid #CCC
+  }
+  .Form button[type=submit] {
+    padding:10px;
+    background: #28ca97;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    padding:10px;
+    width: 90%;
+    border-radius:2px; 
+
+  }
+
+  .Form .footer{
+      width: 100%;
+      text-align: center;
+      padding: 10px 0px;
+      border-top: 1px solid rgb(199, 199, 199);
+      margin-top:20px;
+      background: #eeeeee;
+    
+  }
+    span.icon{
+      display: inline-block;
+      margin: 0px 10px;
+      width: 52px;
+      padding: 14px 0px;
+      border-radius:100%; 
+      
+      cursor: pointer;
+  }
+  .Form .footer span i{ 
+      color: white;
+      font-size: 14px;
+      
+  }
+  .google{
+      background: #d14331;
+  }
+  .facebook{
+      background: #3b5998;
+  }
+
+@media (max-width:512px){
+    .FormContainer{
+        height:100vh;
+    }
+    .Form{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        
+       
+    }
+    .Form .footer{
+        position: absolute;
+        bottom: 0;
+    }
+    .forms input{
+        width: 80vw;
+    }
+    .Form button[type=submit] {
+        width: 80vw
+    }
+    .forms{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%)
+    }
+}
+
+
+
+
+
+
+
+
+
+  #form-switch {
+    display:none
+  }
+  #login-form {
+    display:none
+  }
+  .labelParent{
+    transition: all 1s;
+  }
+  #SignIn{
+    background: #eeeeee;
+    color: #999;
+  }
+  #SignUp{
+      background: white;
+      
+  }
+  #form-switch:checked~div #login-form {
+    display:block;
+  }
+  #form-switch:checked~#SignUp {
+    background: #eeeeee;
+    color: #999;
+  }
+  #form-switch:checked~#SignIn {
+    background: white;
+    color: rgb(36, 36, 36);
+}
+  #form-switch:checked~div #register-form {
+    display:none
+  }
