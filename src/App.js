@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from './Containers/Login/Login';
+import { initializeAlert } from './Helpers/Alert';
+import Routes from './Helpers/Routes';
+import Store from './Store/Store';
 
 class App extends Component {
+  componentDidMount() {
+    initializeAlert();
+   setTimeout(() => {
+    console.log("Store",Store.getState())
+   }, 5000);
+  }
+  
   render() {
     return (
       <div className="App">
-       <Login/>
+        <Routes/>
+        <div id="alert"></div>
       </div>
     );
   }
 }
+
 
 export default App;
