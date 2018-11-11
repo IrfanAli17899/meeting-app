@@ -1,11 +1,15 @@
-function AuthReducer(state = { user: null, checked: null }, action) {
+function AuthReducer(state = { user: null, checked: null, NewUser:{} }, action) {
     switch (action.type) {
         case "Authentication":
-            console.log("action", action);
-
             return { ...state, user: action.user, checked: action.checked }
-        // return { ...state, user: action.payload.user, checked: action.payload.checked }
-
+        case "NewUser":
+            return { ...state, NewUser: action.NewUser }
+            case "UpdateUserdata":
+            const {type,...rest} = action;
+            console.log(rest);
+            
+            
+            return {...state,}
         default:
             return state
     }

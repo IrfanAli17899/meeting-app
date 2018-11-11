@@ -1,12 +1,12 @@
-// import * as firebase from "firebase"
-import firebase from "../../../Config/firebase-conf";
+import * as firebase from "firebase"
 import { Alert } from "../../../Helpers/Alert";
+import Store from "../../Store"
+import history from "../../../Helpers/history";
 
 
 
 const LoginUsingGoogleOrFacebook = (web) => {
     var provider;
-    Alert("info", "Please Wait", "Your Request Is Being In Process");
     switch (web) {
 
         case "facebook":
@@ -16,7 +16,7 @@ const LoginUsingGoogleOrFacebook = (web) => {
         case "google":
             provider = new firebase.auth.GoogleAuthProvider();
             break;
-            default:
+        default:
             break;
 
     }
@@ -30,7 +30,6 @@ const LoginUsingGoogleOrFacebook = (web) => {
 }
 
 const customLoginSignUp = (data, type) => {
-    Alert("info", "Please Wait", "Your Request Is Being In Process");
     if (type === "SignUp") {
         firebase.auth().createUserWithEmailAndPassword(data.Email, data.Password).then((result) => {
             checkMember(result.user);
@@ -53,8 +52,16 @@ const checkMember = (user) => {
             Alert("success", "Sign In For Tinder App", "Successfully Logged In");
             return;
         }
+
+        Store.dispatch({
+            type: "NewUser",
+            NewUser: user
+        })
+
+
+        
         Alert("info", "Sign In For Tinder App", "Almost There");
-        return;
+        history.push("NewUser");
     })
 }
 

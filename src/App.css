@@ -2,6 +2,8 @@
 
 *{
     font-family: 'Quicksand', sans-serif ;
+    color: rgb(48, 48, 48) ;
+
 }
 html,body{
     margin:0;
@@ -80,7 +82,9 @@ html,body{
   }
   
 
-
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 
 
 

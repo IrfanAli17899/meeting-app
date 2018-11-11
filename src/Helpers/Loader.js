@@ -20,7 +20,7 @@ const PageLoader = (Componenet) => {
         componentDidMount() {
             setTimeout(() => {
                 this.setState({ isLoading: false })
-            }, 2000);
+            }, 500);
         }
         render() {
             const { isLoading } = this.state;
